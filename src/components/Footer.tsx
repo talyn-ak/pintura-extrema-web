@@ -9,11 +9,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Target className="h-8 w-8 text-secondary" />
-              <span className="text-2xl font-bold">TacticalZone</span>
+              <span className="text-2xl font-bold">Paintball Terrassa</span>
             </div>
             <p className="text-primary-foreground/80">
-              El mejor centro de paintball de Madrid. Vive la emoción, 
-              siente la adrenalina y disfruta con amigos.
+              El centro de paintball de Terrassa con 3 campos únicos. Vive la emoción 
+              en Trincheras, Castillo y Bosque. Diversión garantizada.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-6 w-6 text-primary-foreground/60 hover:text-secondary cursor-pointer transition-colors" />
@@ -68,17 +68,17 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-secondary" />
                 <span className="text-primary-foreground/80 text-sm">
-                  Carretera de Colmenar Km 15<br />
-                  28049 Madrid
+                  Terrassa<br />
+                  Barcelona
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-secondary" />
-                <span className="text-primary-foreground/80">+34 600 123 456</span>
+                <span className="text-primary-foreground/80">620 386 828</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-primary-foreground/80">info@tacticalzone.es</span>
+                <span className="text-primary-foreground/80">info@paintballterrassa.com</span>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/60">
-            © 2024 TacticalZone. Todos los derechos reservados.
+            © 2024 Paintball Terrassa. Todos los derechos reservados.
           </p>
         </div>
       </div>

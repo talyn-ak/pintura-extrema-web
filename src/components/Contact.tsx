@@ -27,8 +27,8 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Carretera de Colmenar Km 15<br />
-                  28049 Madrid, España
+                  Terrassa, Barcelona<br />
+                  España
                 </p>
                 <Button variant="outline" className="w-full">
                   Ver en Google Maps
@@ -45,16 +45,16 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Lunes - Viernes:</span>
-                  <span className="font-semibold">9:00 - 21:00</span>
+                  <span className="text-muted-foreground">Atención telefónica:</span>
+                  <span className="font-semibold">10:00 - 19:00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Sábados:</span>
-                  <span className="font-semibold">8:00 - 22:00</span>
+                  <span className="text-muted-foreground">WhatsApp:</span>
+                  <span className="font-semibold">10:00 - 19:00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Domingos:</span>
-                  <span className="font-semibold">8:00 - 20:00</span>
+                  <span className="text-muted-foreground">Partidas:</span>
+                  <span className="font-semibold">Consultar disponibilidad</span>
                 </div>
               </CardContent>
             </Card>
@@ -64,7 +64,7 @@ const Contact = () => {
                 <CardContent className="p-6 text-center">
                   <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                   <CardTitle className="text-lg mb-2">Teléfono</CardTitle>
-                  <p className="text-muted-foreground">+34 600 123 456</p>
+                  <p className="text-muted-foreground">620 386 828</p>
                 </CardContent>
               </Card>
 
@@ -72,7 +72,7 @@ const Contact = () => {
                 <CardContent className="p-6 text-center">
                   <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
                   <CardTitle className="text-lg mb-2">Email</CardTitle>
-                  <p className="text-muted-foreground">info@tacticalzone.es</p>
+                  <p className="text-muted-foreground">info@paintballterrassa.com</p>
                 </CardContent>
               </Card>
             </div>
@@ -144,18 +144,18 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Número de Jugadores
-                </label>
-                <input
-                  type="number"
-                  min="2"
-                  max="20"
-                  className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Ej: 8"
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Número de Jugadores (mín. 10, máx. 30)
+                  </label>
+                  <input
+                    type="number"
+                    min="10"
+                    max="30"
+                    className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Ej: 16"
+                  />
+                </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">

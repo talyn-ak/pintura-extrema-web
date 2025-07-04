@@ -5,43 +5,43 @@ import { Eye } from "lucide-react";
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Placeholder images for gallery - in real app, these would be actual paintball photos
+  // Real photos from Paintball Terrassa
   const galleryImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      alt: "Campo de paintball en bosque",
-      title: "Campo Forestal"
+      src: "/src/assets/campo-castillo-1.jpg",
+      alt: "Campo Castillo - Vista principal",
+      title: "Campo Castillo"
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      alt: "Jugadores en acción",
-      title: "Acción Intensa"
+      src: "/src/assets/campo-castillo-2.webp",
+      alt: "Campo Castillo - Estructuras defensivas",
+      title: "Estructuras del Castillo"
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop",
-      alt: "Equipo de paintball",
-      title: "Equipo Profesional"
+      src: "/src/assets/campo-trincheras-1.jpg",
+      alt: "Campo Trincheras - Vista aérea",
+      title: "Campo Trincheras"
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      alt: "Obstáculos de speedball",
-      title: "Campo Speedball"
+      src: "/src/assets/campo-trincheras-2.jpg",
+      alt: "Campo Trincheras - Jugadores en acción",
+      title: "Acción en Trincheras"
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      alt: "Celebración del equipo",
-      title: "Victoria del Equipo"
+      src: "/src/assets/campo-bosque-1.jpg",
+      alt: "Campo Bosque - Entorno natural",
+      title: "Campo Bosque"
     },
     {
       id: 6,
-      src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop",
-      alt: "Instalaciones del centro",
-      title: "Nuestras Instalaciones"
+      src: "/src/assets/campo-castillo-3.webp",
+      alt: "Campo Castillo - Torres y muros",
+      title: "Torres del Castillo"
     }
   ];
 

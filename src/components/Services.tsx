@@ -7,22 +7,22 @@ const Services = () => {
     {
       icon: Users,
       title: "Partidas de Equipo",
-      description: "Forma tu equipo y vive la estrategia militar más emocionante.",
-      features: ["5v5 o 10v10", "Múltiples escenarios", "Duración: 15-30 min"],
-      price: "Desde 25€"
+      description: "Enfrentamientos épicos entre equipos en nuestros 3 campos únicos: Trincheras, Castillo y Bosque.",
+      features: ["17€ con 100 bolas", "22€ con 200 bolas", "32€ con 400 bolas", "Equipos de 5 vs 5 o más"],
+      price: "Desde 17€"
     },
     {
       icon: Zap,
       title: "Speedball",
       description: "Acción rápida e intensa en campos simétricos con obstáculos inflables.",
-      features: ["3v3 rápido", "Torneos semanales", "Duración: 10 min"],
+      features: ["Campo Trincheras", "Cronómetro oficial", "Modalidad competitiva"],
       price: "Desde 20€"
     },
     {
       icon: Trophy,
       title: "Torneos",
       description: "Compite en nuestros torneos oficiales y demuestra tu habilidad.",
-      features: ["Premios garantizados", "Ranking oficial", "Equipos mixtos"],
+      features: ["Premios incluidos", "Arbitraje profesional", "3 campos disponibles"],
       price: "Desde 50€"
     },
     {
