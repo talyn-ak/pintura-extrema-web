@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Eye } from "lucide-react";
+import campoCastillo1 from "@/assets/campo-castillo-1.jpg";
+import campoCastillo2 from "@/assets/campo-castillo-2.webp";
+import campoCastillo3 from "@/assets/campo-castillo-3.webp";
+import campoTrincheras1 from "@/assets/campo-trincheras-1.jpg";
+import campoTrincheras2 from "@/assets/campo-trincheras-2.jpg";
+import campoBosque1 from "@/assets/campo-bosque-1.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -9,37 +15,37 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/src/assets/campo-castillo-1.jpg",
+      src: campoCastillo1,
       alt: "Campo Castillo - Vista principal",
       title: "Campo Castillo"
     },
     {
       id: 2,
-      src: "/src/assets/campo-castillo-2.webp",
+      src: campoCastillo2,
       alt: "Campo Castillo - Estructuras defensivas",
       title: "Estructuras del Castillo"
     },
     {
       id: 3,
-      src: "/src/assets/campo-trincheras-1.jpg",
+      src: campoTrincheras1,
       alt: "Campo Trincheras - Vista aérea",
       title: "Campo Trincheras"
     },
     {
       id: 4,
-      src: "/src/assets/campo-trincheras-2.jpg",
+      src: campoTrincheras2,
       alt: "Campo Trincheras - Jugadores en acción",
       title: "Acción en Trincheras"
     },
     {
       id: 5,
-      src: "/src/assets/campo-bosque-1.jpg",
+      src: campoBosque1,
       alt: "Campo Bosque - Entorno natural",
       title: "Campo Bosque"
     },
     {
       id: 6,
-      src: "/src/assets/campo-castillo-3.webp",
+      src: campoCastillo3,
       alt: "Campo Castillo - Torres y muros",
       title: "Torres del Castillo"
     }

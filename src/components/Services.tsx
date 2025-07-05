@@ -1,37 +1,48 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Zap, Trophy, Target } from "lucide-react";
+import { Users, Target, Plus, Shield } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: Users,
-      title: "Partidas de Equipo",
-      description: "Enfrentamientos épicos entre equipos en nuestros 3 campos únicos: Trincheras, Castillo y Bosque.",
-      features: ["17€ con 100 bolas", "22€ con 200 bolas", "32€ con 400 bolas", "Equipos de 5 vs 5 o más"],
-      price: "Desde 17€"
-    },
-    {
-      icon: Zap,
-      title: "Speedball",
-      description: "Acción rápida e intensa en campos simétricos con obstáculos inflables.",
-      features: ["Campo Trincheras", "Cronómetro oficial", "Modalidad competitiva"],
-      price: "Desde 20€"
-    },
-    {
-      icon: Trophy,
-      title: "Torneos",
-      description: "Compite en nuestros torneos oficiales y demuestra tu habilidad.",
-      features: ["Premios incluidos", "Arbitraje profesional", "3 campos disponibles"],
-      price: "Desde 50€"
+      title: "Partida Básica",
+      description: "Perfecto para iniciarse. Duración aproximada: 2-3h (explicación, equipación y partidas).",
+      features: ["100 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
+      price: "17€",
+      whatsappText: "Hola! Me interesa la Partida Básica por 17€ con 100 bolas"
     },
     {
       icon: Target,
-      title: "Entrenamiento",
-      description: "Mejora tu precisión y táctica con nuestros cursos especializados.",
-      features: ["Instructor personal", "Técnicas avanzadas", "Certificado"],
-      price: "Desde 40€"
+      title: "Partida Estándar", 
+      description: "La opción más popular. Duración aproximada: 2-3h (explicación, equipación y partidas).",
+      features: ["200 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
+      price: "22€",
+      whatsappText: "Hola! Me interesa la Partida Estándar por 22€ con 200 bolas"
+    },
+    {
+      icon: Plus,
+      title: "Partida Premium",
+      description: "Para los más guerreros. Duración aproximada: 2-3h (explicación, equipación y partidas).",
+      features: ["400 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
+      price: "32€",
+      whatsappText: "Hola! Me interesa la Partida Premium por 32€ con 400 bolas"
     }
+  ];
+
+  const extras = [
+    { name: "Recarga 100 bolas", price: "7€" },
+    { name: "Pack 2000 bolas", price: "100€" },
+    { name: "Máscara nueva", price: "5€" }
+  ];
+
+  const materialIncluido = [
+    "Mono de camuflaje",
+    "Chaleco protector",
+    "Máscara thermal antivaho",
+    "Marcadora de paintball aire comprimido",
+    "Seguro RC y Médico",
+    "Bolas de paintball contratadas"
   ];
 
   return (
@@ -47,7 +58,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <Card key={index} className="relative overflow-hidden group hover:shadow-tactical transition-all duration-300 animate-fade-in">
               <CardHeader className="text-center">
@@ -70,14 +81,56 @@ const Services = () => {
                 </ul>
                 <div className="pt-4 border-t">
                   <div className="text-2xl font-bold text-primary mb-3">{service.price}</div>
-                  <Button variant="tactical" className="w-full">
-                    Reservar
+                  <Button 
+                    variant="tactical" 
+                    className="w-full mb-2"
+                    onClick={() => window.open(`https://wa.me/34620386828?text=${encodeURIComponent(service.whatsappText)}`, '_blank')}
+                  >
+                    Reservar WhatsApp
                   </Button>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {/* Extras Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Extras Disponibles</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            {extras.map((extra, index) => (
+              <Card key={index} className="text-center p-4 hover:shadow-tactical transition-all duration-300">
+                <CardContent className="p-0">
+                  <div className="text-lg font-semibold text-foreground">{extra.name}</div>
+                  <div className="text-xl font-bold text-primary">{extra.price}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Material Incluido */}
+        <Card className="max-w-4xl mx-auto hover:shadow-tactical transition-all duration-300">
+          <CardHeader className="text-center">
+            <div className="mx-auto w-16 h-16 bg-gradient-tactical rounded-full flex items-center justify-center mb-4">
+              <Shield className="h-8 w-8 text-primary-foreground" />
+            </div>
+            <CardTitle className="text-2xl text-foreground">Material Incluido</CardTitle>
+            <CardDescription>
+              Todo lo necesario para disfrutar de una experiencia completa y segura
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {materialIncluido.map((item, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

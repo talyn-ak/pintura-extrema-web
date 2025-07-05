@@ -30,8 +30,12 @@ const Header = () => {
             <Phone className="h-4 w-4" />
             <span>620 386 828</span>
           </div>
-          <Button variant="tactical" size="sm">
-            Reservar
+          <Button 
+            variant="tactical" 
+            size="sm"
+            onClick={() => window.open('https://wa.me/34620386828?text=Hola! Me gustaría reservar una partida de paintball', '_blank')}
+          >
+            WhatsApp
           </Button>
         </div>
       </div>
