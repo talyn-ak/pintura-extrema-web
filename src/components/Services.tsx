@@ -7,7 +7,7 @@ const Services = () => {
     {
       icon: Users,
       title: "Partida Básica",
-      description: "Perfecto para iniciarse. Para jugadores con buena puntería y que saben que gastan poco. Aproximadamente unas 2 partidas. Aproximadamente entre 1,30 y 2 horas.",
+      description: "Para jugadores con buena puntería y que saben que gastan poco. Aproximadamente unas 2 partidas. Aproximadamente entre 1,30 y 2 horas.",
       features: ["100 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "17€",
       whatsappText: "Hola! Me interesa la Partida Básica por 17€ con 100 bolas"
@@ -32,8 +32,8 @@ const Services = () => {
 
   const extras = [
     { name: "Recarga 100 bolas", price: "7€" },
-    { name: "Pack 2000 bolas", price: "100€" },
-    { name: "Máscara nueva", price: "5€" }
+    { name: "Recarga 2000 bolas", price: "100€" },
+    { name: "Estrena máscara nueva", price: "5€" }
   ];
 
   const materialIncluido = [
