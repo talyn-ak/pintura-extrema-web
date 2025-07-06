@@ -7,7 +7,7 @@ const Services = () => {
     {
       icon: Users,
       title: "Partida Básica",
-      description: "Perfecto para iniciarse. Duración aproximada: 2-3h (explicación, equipación y partidas).",
+      description: "Perfecto para iniciarse. Para jugadores con buena puntería y que saben que gastan poco. Aproximadamente unas 2 partidas. Aproximadamente entre 1,30 y 2 horas.",
       features: ["100 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "17€",
       whatsappText: "Hola! Me interesa la Partida Básica por 17€ con 100 bolas"
@@ -15,7 +15,7 @@ const Services = () => {
     {
       icon: Target,
       title: "Partida Estándar", 
-      description: "La opción más popular. Duración aproximada: 2-3h (explicación, equipación y partidas).",
+      description: "La opción más popular. Duración aproximada: 2-3h (explicación, equipación y partidas). Unas 4 partidas aprox.",
       features: ["200 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "22€",
       whatsappText: "Hola! Me interesa la Partida Estándar por 22€ con 200 bolas"
@@ -23,7 +23,7 @@ const Services = () => {
     {
       icon: Plus,
       title: "Partida Premium",
-      description: "Para los más guerreros. Duración aproximada: 2-3h (explicación, equipación y partidas).",
+      description: "Para los más guerreros. Alrededor de las 3 horas. Unas 5-6 partidas aprox.",
       features: ["400 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "32€",
       whatsappText: "Hola! Me interesa la Partida Premium por 32€ con 400 bolas"
