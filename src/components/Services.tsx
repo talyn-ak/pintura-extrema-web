@@ -23,7 +23,7 @@ const Services = () => {
     {
       icon: Plus,
       title: "Partida Premium",
-      description: "Para los más guerreros. Alrededor de las 3 horas. Unas 5-6 partidas aprox.",
+      description: "Para los más guerreros. Alrededor de las 3 horas. Unas 5-6 partidas aprox. ",
       features: ["400 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "32€",
       whatsappText: "Hola! Me interesa la Partida Premium por 32€ con 400 bolas"
@@ -37,10 +37,12 @@ const Services = () => {
   ];
 
   const materialIncluido = [
-    "Mono de camuflaje",
+    "Mono de camuflaje con protector de cuello",
     "Chaleco protector",
     "Máscara thermal antivaho",
     "Marcadora de paintball aire comprimido",
+    "Aire comprimido ilimitado",
+    "Guantes",
     "Seguro RC y Médico",
     "Bolas de paintball contratadas"
   ];
@@ -97,11 +99,11 @@ const Services = () => {
         {/* Extras Section */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Extras Disponibles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {extras.map((extra, index) => (
-              <Card key={index} className="text-center p-4 hover:shadow-tactical transition-all duration-300">
-                <CardContent className="p-0">
-                  <div className="text-lg font-semibold text-foreground">{extra.name}</div>
+              <Card key={index} className="text-center p-6 hover:shadow-tactical transition-all duration-300">
+                <CardContent className="p-0 flex flex-col justify-between h-full">
+                  <div className="text-lg font-semibold text-foreground mb-4">{extra.name}</div>
                   <div className="text-xl font-bold text-primary">{extra.price}</div>
                 </CardContent>
               </Card>

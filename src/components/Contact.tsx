@@ -27,10 +27,14 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Terrassa, Barcelona<br />
+                  Carrer de Castellar, 08223 Terrassa, Barcelona<br />
                   España
                 </p>
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.open('https://maps.google.com/maps?q=Terrassa+Barcelona+Paintball', '_blank')}
+                >
                   Ver en Google Maps
                 </Button>
               </CardContent>
@@ -136,10 +140,9 @@ const Contact = () => {
                     Modalidad
                   </label>
                   <select className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent">
-                    <option>Partidas de Equipo</option>
-                    <option>Speedball</option>
-                    <option>Torneo</option>
-                    <option>Entrenamiento</option>
+                    <option>Partida Básica (17€)</option>
+                    <option>Partida Estándar (22€)</option>
+                    <option>Partida Premium (32€)</option>
                   </select>
                 </div>
               </div>
