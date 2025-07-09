@@ -62,7 +62,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="relative overflow-hidden group hover:shadow-tactical transition-all duration-300 animate-fade-in">
+            <Card key={index} className="relative overflow-hidden group hover:shadow-tactical transition-all duration-300 animate-fade-in flex flex-col h-full">
               <CardHeader className="text-center">
                 <div className="mx-auto w-16 h-16 bg-gradient-tactical rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <service.icon className="h-8 w-8 text-primary-foreground" />
@@ -72,8 +72,8 @@ const Services = () => {
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2">
+              <CardContent className="space-y-4 flex-1 flex flex-col">
+                <ul className="space-y-2 flex-1">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
                       <Target className="h-4 w-4 text-primary mr-2" />
@@ -81,7 +81,7 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="pt-4 border-t">
+                <div className="pt-4 border-t mt-auto">
                   <div className="text-2xl font-bold text-primary mb-3">{service.price}</div>
                   <Button 
                     variant="tactical" 
