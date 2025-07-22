@@ -9,7 +9,7 @@ const Contact = () => {
     telefono: '',
     email: '',
     fecha: '',
-    modalidad: 'Partida Básica (17€)',
+    modalidad: '',
     jugadores: '',
     comentarios: ''
   });
@@ -23,6 +23,11 @@ const Contact = () => {
   };
 
   const handleSubmit = () => {
+    if (!formData.modalidad) {
+      alert('Por favor, selecciona una modalidad antes de enviar la reserva.');
+      return;
+    }
+
     const message = `🎯 *RESERVA PAINTBALL TERRASSA*
 
 📋 *Datos del Cliente:*
@@ -198,9 +203,10 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                   >
-                    <option>Partida Básica (17€)</option>
-                    <option>Partida Estándar (22€)</option>
-                    <option>Partida Premium (32€)</option>
+                    <option value="">Selecciona una modalidad</option>
+                    <option value="Partida Básica (17€)">Partida Básica (17€)</option>
+                    <option value="Partida Estándar (22€)">Partida Estándar (22€)</option>
+                    <option value="Partida Premium (32€)">Partida Premium (32€)</option>
                   </select>
                 </div>
               </div>
