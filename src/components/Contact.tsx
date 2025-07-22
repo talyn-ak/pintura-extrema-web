@@ -1,8 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Clock, Mail, Calendar } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    telefono: '',
+    email: '',
+    fecha: '',
+    modalidad: 'Partida Básica (17€)',
+    jugadores: '',
+    comentarios: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = () => {
+    const message = `🎯 *RESERVA PAINTBALL TERRASSA*
+
+📋 *Datos del Cliente:*
+• Nombre: ${formData.nombre}
+• Teléfono: ${formData.telefono}
+• Email: ${formData.email}
+
+🎮 *Detalles de la Reserva:*
+• Fecha: ${formData.fecha}
+• Modalidad: ${formData.modalidad}
+• Número de jugadores: ${formData.jugadores}
+
+💬 *Comentarios:*
+${formData.comentarios || 'Sin comentarios adicionales'}
+
+¡Hola! Me gustaría reservar una partida con estos datos. ¿Podrían confirmarme la disponibilidad?`;
+
+    const whatsappUrl = `https://wa.me/34620386828?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contacto" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -98,6 +139,9 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Tu nombre"
                   />
@@ -108,6 +152,9 @@ const Contact = () => {
                   </label>
                   <input
                     type="tel"
+                    name="telefono"
+                    value={formData.telefono}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="+34 600 000 000"
                   />
@@ -120,6 +167,9 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="tu@email.com"
                 />
@@ -132,6 +182,9 @@ const Contact = () => {
                   </label>
                   <input
                     type="date"
+                    name="fecha"
+                    value={formData.fecha}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
@@ -139,7 +192,12 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Modalidad
                   </label>
-                  <select className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <select 
+                    name="modalidad"
+                    value={formData.modalidad}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
+                  >
                     <option>Partida Básica (17€)</option>
                     <option>Partida Estándar (22€)</option>
                     <option>Partida Premium (32€)</option>
@@ -153,6 +211,9 @@ const Contact = () => {
                   </label>
                   <input
                     type="number"
+                    name="jugadores"
+                    value={formData.jugadores}
+                    onChange={handleInputChange}
                     min="10"
                     max="30"
                     className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -165,13 +226,21 @@ const Contact = () => {
                   Comentarios
                 </label>
                 <textarea
+                  name="comentarios"
+                  value={formData.comentarios}
+                  onChange={handleInputChange}
                   rows={3}
                   className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Detalles adicionales o preguntas..."
                 ></textarea>
               </div>
 
-              <Button variant="action" className="w-full" size="lg">
+              <Button 
+                variant="action" 
+                className="w-full" 
+                size="lg"
+                onClick={handleSubmit}
+              >
                 <Calendar className="h-5 w-5 mr-2" />
                 Enviar Reserva
               </Button>
