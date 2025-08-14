@@ -36,7 +36,12 @@ const Hero = () => {
               Reservar Ahora
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="hero" className="bg-white/10 text-white border-white/30 hover:bg-white/20">
+            <Button 
+              variant="outline" 
+              size="hero" 
+              className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+              onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Ver Modalidades
             </Button>
           </div>
