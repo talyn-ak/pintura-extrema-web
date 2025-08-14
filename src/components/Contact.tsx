@@ -213,7 +213,7 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Número de Jugadores (mín. 10, máx. 30)
+                    Número de Jugadores (mín. 10, máx. 30) - Otra cantidad preguntar
                   </label>
                   <input
                     type="number"
