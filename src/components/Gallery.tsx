@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Eye } from "lucide-react";
 import campoCastillo1 from "@/assets/campo-castillo-1.jpg";
-import campoCastillo4 from "@/assets/campo-castillo-4.webp";
-import campoCastillo5 from "@/assets/campo-castillo-5.webp";
+import campoCastillo2 from "@/assets/campo-castillo-2.webp";
+import campoCastillo3 from "@/assets/campo-castillo-3.webp";
 import campoTrincheras1 from "@/assets/campo-trincheras-1.jpg";
 import campoTrincheras2 from "@/assets/campo-trincheras-2.jpg";
 import campoBosque1 from "@/assets/campo-bosque-1.jpg";
@@ -21,7 +21,7 @@ const Gallery = () => {
     },
     {
       id: 2,
-      src: campoCastillo4,
+      src: campoCastillo2,
       alt: "Campo Castillo - Estructuras defensivas",
       title: "Estructuras del Castillo"
     },
@@ -45,7 +45,7 @@ const Gallery = () => {
     },
     {
       id: 6,
-      src: campoCastillo5,
+      src: campoCastillo3,
       alt: "Campo Castillo - Torres y muros",
       title: "Torres del Castillo"
     }
