@@ -19,7 +19,7 @@ const Contact = () => {
   });
 
   const [selectedDate, setSelectedDate] = useState<Date>();
-  const [dateOption, setDateOption] = useState('concretar');
+  const [dateOption, setDateOption] = useState('especifica');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -203,8 +203,8 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
                     }}
                     className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent mb-2"
                   >
-                    <option value="concretar">Fecha a concretar</option>
                     <option value="especifica">Seleccionar fecha específica</option>
+                    <option value="concretar">Fecha a concretar</option>
                   </select>
                   
                   {dateOption === 'especifica' && (
