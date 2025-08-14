@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Clock, Mail, Calendar } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { MapPin, Phone, Clock, Mail, Calendar as CalendarIcon } from "lucide-react";
 import { useState } from "react";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +17,9 @@ const Contact = () => {
     jugadores: '',
     comentarios: ''
   });
+
+  const [selectedDate, setSelectedDate] = useState<Date>();
+  const [dateOption, setDateOption] = useState('concretar');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -185,13 +192,53 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Fecha
                   </label>
-                  <input
-                    type="date"
-                    name="fecha"
-                    value={formData.fecha}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
+                  <select 
+                    value={dateOption}
+                    onChange={(e) => {
+                      setDateOption(e.target.value);
+                      if (e.target.value === 'concretar') {
+                        setFormData(prev => ({ ...prev, fecha: 'Fecha a concretar' }));
+                        setSelectedDate(undefined);
+                      }
+                    }}
+                    className="w-full px-4 py-2 border border-input rounded-md bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent mb-2"
+                  >
+                    <option value="concretar">Fecha a concretar</option>
+                    <option value="especifica">Seleccionar fecha específica</option>
+                  </select>
+                  
+                  {dateOption === 'especifica' && (
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal",
+                            !selectedDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {selectedDate ? format(selectedDate, "dd/MM/yyyy") : <span>Seleccionar fecha</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={selectedDate}
+                          onSelect={(date) => {
+                            setSelectedDate(date);
+                            setFormData(prev => ({ 
+                              ...prev, 
+                              fecha: date ? format(date, "dd/MM/yyyy") : ''
+                            }));
+                          }}
+                          disabled={(date) => date < new Date()}
+                          initialFocus
+                          className={cn("p-3 pointer-events-auto")}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
@@ -247,7 +294,7 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
                 size="lg"
                 onClick={handleSubmit}
               >
-                <Calendar className="h-5 w-5 mr-2" />
+                <CalendarIcon className="h-5 w-5 mr-2" />
                 Enviar Reserva
               </Button>
             </CardContent>
