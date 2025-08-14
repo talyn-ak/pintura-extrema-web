@@ -33,9 +33,9 @@ const Header = () => {
           <Button 
             variant="tactical" 
             size="sm"
-            onClick={() => window.open('https://wa.me/34620386828?text=Hola! Me gustaría reservar una partida de paintball', '_blank')}
+            onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            WhatsApp
+            Reservar
           </Button>
         </div>
       </div>

@@ -86,9 +86,9 @@ const Services = () => {
                   <Button 
                     variant="tactical" 
                     className="w-full mb-2"
-                    onClick={() => window.open(`https://wa.me/34620386828?text=${encodeURIComponent(service.whatsappText)}`, '_blank')}
+                    onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
                   >
-                    Reservar WhatsApp
+                    Reservar Partida
                   </Button>
                 </div>
               </CardContent>

@@ -27,7 +27,12 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in">
-            <Button variant="action" size="hero" className="group">
+            <Button 
+              variant="action" 
+              size="hero" 
+              className="group"
+              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Reservar Ahora
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
