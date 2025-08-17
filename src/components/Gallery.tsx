@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Eye } from "lucide-react";
 import campoCastillo1 from "@/assets/campo-castillo-1.jpg";
-import campoCastillo4 from "@/assets/campo-castillo-4.jpg";
-import campoCastillo5 from "@/assets/campo-castillo-5.jpg";
+import campoCastillo4 from "@/assets/campo-castillo-4.webp";
+import campoCastillo5 from "@/assets/campo-castillo-5.webp";
 import campoTrincheras1 from "@/assets/campo-trincheras-1.jpg";
 import campoTrincheras2 from "@/assets/campo-trincheras-2.jpg";
 import campoBosque1 from "@/assets/campo-bosque-1.jpg";
@@ -23,7 +23,8 @@ const Gallery = () => {
       id: 2,
       src: campoCastillo4,
       alt: "Campo Castillo - Estructuras defensivas",
-      title: "Estructuras del Castillo"
+      title: "Estructuras del Castillo",
+      fallback: "/images/campo-castillo-4.jpg"
     },
     {
       id: 3,
@@ -47,7 +48,8 @@ const Gallery = () => {
       id: 6,
       src: campoCastillo5,
       alt: "Campo Castillo - Torres y muros",
-      title: "Torres del Castillo"
+      title: "Torres del Castillo",
+      fallback: "/images/campo-castillo-5.jpg"
     }
   ];
 
@@ -75,6 +77,12 @@ const Gallery = () => {
                   src={image.src}
                   alt={image.alt}
                   loading="lazy"
+                  onError={(e) => {
+                    const fallback = (image as any).fallback;
+                    if (fallback && e.currentTarget.src !== fallback) {
+                      e.currentTarget.src = fallback;
+                    }
+                  }}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
