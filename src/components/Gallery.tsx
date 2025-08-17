@@ -23,7 +23,8 @@ const Gallery = () => {
       id: 2,
       src: campoCastillo4,
       alt: "Campo Castillo - Estructuras defensivas",
-      title: "Estructuras del Castillo"
+      title: "Estructuras del Castillo",
+      fallback: "/images/campo-castillo-4.jpg"
     },
     {
       id: 3,
@@ -47,7 +48,8 @@ const Gallery = () => {
       id: 6,
       src: campoCastillo5,
       alt: "Campo Castillo - Torres y muros",
-      title: "Torres del Castillo"
+      title: "Torres del Castillo",
+      fallback: "/images/campo-castillo-5.jpg"
     }
   ];
 
@@ -74,6 +76,13 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
+                  onError={(e) => {
+                    const fallback = (image as any).fallback;
+                    if (fallback && e.currentTarget.src !== fallback) {
+                      e.currentTarget.src = fallback;
+                    }
+                  }}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
