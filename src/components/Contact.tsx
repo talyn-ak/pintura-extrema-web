@@ -69,74 +69,8 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-6 animate-fade-in">
-            <Card className="hover:shadow-tactical transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-foreground">
-                  <MapPin className="h-6 w-6 text-primary" />
-                  Ubicación
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Carrer de Castellar, 08223 Terrassa, Barcelona<br />
-                  España
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="w-full"
-                  onClick={() => window.open('https://maps.google.com/maps?q=Terrassa+Barcelona+Paintball', '_blank')}
-                >
-                  Ver en Google Maps
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-tactical transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-foreground">
-                  <Clock className="h-6 w-6 text-primary" />
-                  Horarios
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Atención telefónica:</span>
-                  <span className="font-semibold">10:00 - 19:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">WhatsApp:</span>
-                  <span className="font-semibold">10:00 - 19:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Partidas:</span>
-                  <span className="font-semibold">Consultar disponibilidad</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Card className="hover:shadow-tactical transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <CardTitle className="text-lg mb-2">Teléfono</CardTitle>
-                  <p className="text-muted-foreground">620 386 828</p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-tactical transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <CardTitle className="text-lg mb-2">Email</CardTitle>
-                  <p className="text-muted-foreground">info@paintballterrassa.com</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Reservation Form */}
-          <Card className="animate-slide-in-right hover:shadow-tactical transition-all duration-300">
+          {/* Reservation Form - First on mobile */}
+          <Card className="order-1 lg:order-2 animate-slide-in-right hover:shadow-tactical transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground">Reserva tu Partida</CardTitle>
               <CardDescription>
@@ -299,6 +233,72 @@ ${formData.comentarios || 'Sin comentarios adicionales'}
               </Button>
             </CardContent>
           </Card>
+
+          {/* Contact Information - Second on mobile */}
+          <div className="order-2 lg:order-1 space-y-6 animate-fade-in">
+            <Card className="hover:shadow-tactical transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-foreground">
+                  <MapPin className="h-6 w-6 text-primary" />
+                  Ubicación
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Carrer de Castellar, 08223 Terrassa, Barcelona<br />
+                  España
+                </p>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.open('https://maps.google.com/maps?q=Terrassa+Barcelona+Paintball', '_blank')}
+                >
+                  Ver en Google Maps
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-tactical transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-foreground">
+                  <Clock className="h-6 w-6 text-primary" />
+                  Horarios
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Atención telefónica:</span>
+                  <span className="font-semibold">10:00 - 19:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">WhatsApp:</span>
+                  <span className="font-semibold">10:00 - 19:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Partidas:</span>
+                  <span className="font-semibold">Consultar disponibilidad</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className="hover:shadow-tactical transition-all duration-300">
+                <CardContent className="p-6 text-center">
+                  <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
+                  <CardTitle className="text-lg mb-2">Teléfono</CardTitle>
+                  <p className="text-muted-foreground">620 386 828</p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-tactical transition-all duration-300">
+                <CardContent className="p-6 text-center">
+                  <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
+                  <CardTitle className="text-lg mb-2">Email</CardTitle>
+                  <p className="text-muted-foreground">info@paintballterrassa.com</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
