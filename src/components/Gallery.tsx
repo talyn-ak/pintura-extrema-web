@@ -12,12 +12,12 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
-    { id: 1, src: galeria1, alt: "Trincheras - Defensa del pasadizo", title: "Trincheras en Acción" },
-    { id: 2, src: galeria2, alt: "Jugadores camuflados en el bosque", title: "Estrategia en el Bosque" },
-    { id: 3, src: galeria3, alt: "Campo de neumáticos bajo la nieve", title: "Partida con Nieve" },
-    { id: 4, src: galeria4, alt: "Trincheras y bandera en día despejado", title: "Terreno de Trincheras" },
-    { id: 5, src: galeria5, alt: "Campo con parapetos de madera", title: "Parapetos de Madera" },
-    { id: 6, src: galeria6, alt: "Estructura elevada de madera", title: "Torre de Madera" }
+    { id: 1, src: galeria1, alt: "Trincheras - Defensa del pasadizo", title: "Campo Castillo" },
+    { id: 2, src: galeria2, alt: "Jugadores camuflados en el bosque", title: "Defensas del Castillo" },
+    { id: 3, src: galeria3, alt: "Campo de neumáticos bajo la nieve", title: "Campo de Trincheras" },
+    { id: 4, src: galeria4, alt: "Trincheras y bandera en día despejado", title: "Combate Trincheras" },
+    { id: 5, src: galeria5, alt: "Campo con parapetos de madera", title: "Campo Bosque" },
+    { id: 6, src: galeria6, alt: "Estructura elevada de madera", title: "Torre Castillo" }
   ];
 
   return (
