@@ -1,56 +1,23 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Eye } from "lucide-react";
-import campoCastillo1 from "@/assets/campo-castillo-1.jpg";
-import campoCastillo4 from "@/assets/campo-castillo-14.webp";
-import campoCastillo5 from "@/assets/campo-castillo-15.webp";
-import campoTrincheras1 from "@/assets/campo-trincheras-1.jpg";
-import campoTrincheras2 from "@/assets/campo-trincheras-2.jpg";
-import campoBosque1 from "@/assets/campo-bosque-1.jpg";
+import galeria1 from "@/assets/galeria-1.jpg";
+import galeria2 from "@/assets/galeria-2.jpg";
+import galeria3 from "@/assets/galeria-3.jpg";
+import galeria4 from "@/assets/galeria-4.jpg";
+import galeria5 from "@/assets/galeria-5.jpg";
+import galeria6 from "@/assets/galeria-6.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Real photos from Paintball Terrassa
   const galleryImages = [
-    {
-      id: 1,
-      src: campoCastillo1,
-      alt: "Campo Castillo - Vista principal",
-      title: "Campo Castillo"
-    },
-    {
-      id: 2,
-      src: campoCastillo4,
-      alt: "Campo Castillo - Estructuras defensivas",
-      title: "Estructuras del Castillo",
-      
-    },
-    {
-      id: 3,
-      src: campoTrincheras1,
-      alt: "Campo Trincheras - Vista aérea",
-      title: "Campo Trincheras"
-    },
-    {
-      id: 4,
-      src: campoTrincheras2,
-      alt: "Campo Trincheras - Jugadores en acción",
-      title: "Acción en Trincheras"
-    },
-    {
-      id: 5,
-      src: campoBosque1,
-      alt: "Campo Bosque - Entorno natural",
-      title: "Campo Bosque"
-    },
-    {
-      id: 6,
-      src: campoCastillo5,
-      alt: "Campo Castillo - Torres y muros",
-      title: "Torres del Castillo",
-      
-    }
+    { id: 1, src: galeria1, alt: "Trincheras - Defensa del pasadizo", title: "Trincheras en Acción" },
+    { id: 2, src: galeria2, alt: "Jugadores camuflados en el bosque", title: "Estrategia en el Bosque" },
+    { id: 3, src: galeria3, alt: "Campo de neumáticos bajo la nieve", title: "Partida con Nieve" },
+    { id: 4, src: galeria4, alt: "Trincheras y bandera en día despejado", title: "Terreno de Trincheras" },
+    { id: 5, src: galeria5, alt: "Campo con parapetos de madera", title: "Parapetos de Madera" },
+    { id: 6, src: galeria6, alt: "Estructura elevada de madera", title: "Torre de Madera" }
   ];
 
   return (
