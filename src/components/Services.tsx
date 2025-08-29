@@ -8,7 +8,7 @@ const Services = () => {
       icon: Users,
       title: "Partida Básica",
       description: "Para jugadores con buena puntería y que saben que gastan poco. Aproximadamente unas 2 partidas. Aproximadamente entre 1,30 y 2 horas.",
-      features: ["100 bolas incluidas", "Equipos de 5 vs 5 o más", "6 campos: banderas, trincheras, asalto a la colina, Battle royale, Columnas y CQB poblado"],
+      features: ["100 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "17€",
       whatsappText: "Hola! Me interesa la Partida Básica por 17€ con 100 bolas"
     },
@@ -16,7 +16,7 @@ const Services = () => {
       icon: Target,
       title: "Partida Estándar", 
       description: "La opción más popular. Duración aproximada: 2-3h (explicación, equipación y partidas). Unas 4 partidas aprox.",
-      features: ["200 bolas incluidas", "Equipos de 5 vs 5 o más", "6 campos: banderas, trincheras, asalto a la colina, Battle royale, Columnas y CQB poblado"],
+      features: ["200 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
       price: "22€",
       whatsappText: "Hola! Me interesa la Partida Estándar por 22€ con 200 bolas"
     },
@@ -24,9 +24,8 @@ const Services = () => {
       icon: Plus,
       title: "Partida Premium",
       description: "Para los más guerreros. Alrededor de las 3 horas. Unas 5-6 partidas aprox. ",
-      features: ["400 bolas incluidas", "Equipos de 5 vs 5 o más", "6 campos: banderas, trincheras, asalto a la colina, Battle royale, Columnas y CQB poblado"],
-      price: "30€",
-      originalPrice: "32€",
+      features: ["400 bolas incluidas", "Equipos de 5 vs 5 o más", "3 campos disponibles: Trincheras, Castillo y Bosque"],
+      price: "32€",
       whatsappText: "Hola! Me interesa la Partida Premium por 32€ con 400 bolas"
     }
   ];
@@ -83,16 +82,7 @@ const Services = () => {
                   ))}
                 </ul>
                 <div className="pt-4 border-t mt-auto">
-                  <div className="mb-3">
-                    {service.originalPrice ? (
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg text-muted-foreground line-through">{service.originalPrice}</span>
-                        <span className="text-2xl font-bold text-primary">{service.price}</span>
-                      </div>
-                    ) : (
-                      <div className="text-2xl font-bold text-primary">{service.price}</div>
-                    )}
-                  </div>
+                  <div className="text-2xl font-bold text-primary mb-3">{service.price}</div>
                   <Button 
                     variant="tactical" 
                     className="w-full mb-2"
