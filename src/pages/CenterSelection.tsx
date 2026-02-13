@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Target, TreePine } from "lucide-react";
 import { useState } from "react";
-import campoCastillo from "@/assets/campo-castillo-1.jpg";
 import campoBosque from "@/assets/campo-bosque-1.jpg";
+import aventurcatAerial from "@/assets/aventurcat-aerial.jpg";
 
 const CenterSelection = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const CenterSelection = () => {
         }`}
       >
         <img
-          src={campoCastillo}
+          src={campoBosque}
           alt="Paintball Terrassa"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -43,7 +43,7 @@ const CenterSelection = () => {
             Paintball Terrassa
           </h2>
           <p className="text-primary-foreground/60 text-sm md:text-base mb-6">
-            6 campos · Equipamiento profesional
+            3 campos · Equipamiento profesional
           </p>
           <span
             className={`inline-flex items-center gap-2 text-primary font-semibold text-lg transition-all duration-300 ${
@@ -71,7 +71,7 @@ const CenterSelection = () => {
         }`}
       >
         <img
-          src={campoBosque}
+          src={aventurcatAerial}
           alt="Aventurcat"
           className="absolute inset-0 w-full h-full object-cover"
         />
